@@ -96,9 +96,7 @@ function RobinhoodWebApi(opts, callback) {
       Accept: '*/*',
       'Accept-Encoding': 'gzip, deflate',
       Referer: 'https://robinhood.com/',
-      Origin: 'https://robinhood.com',
-      'Access-Control-Allow-Origin' : 'http://localhost:3000',
-      'Access-Control-Allow-Credentials' : true,
+      Origin: 'https://robinhood.com'
     };
     _setHeaders();
     if (!_private.auth_token) {
