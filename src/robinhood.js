@@ -99,7 +99,8 @@ function RobinhoodWebApi(opts, callback) {
       Origin: 'https://robinhood.com',
       'Access-Control-Allow-Methods': 'HEAD, GET, POST, PUT, DELETE',
       'Access-Control-Allow-Headers': 'Origin, Content-Type, Authorization',
-      'Access-Control-Allow-Origin': 'http://localhost:3000'
+      'Access-Control-Allow-Origin': 'http://localhost:3000',
+      'Access-Control-Allow-Credentials': 'true'
     };
     _setHeaders();
     if (!_private.auth_token) {
