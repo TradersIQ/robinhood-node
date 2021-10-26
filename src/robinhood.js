@@ -97,9 +97,8 @@ function RobinhoodWebApi(opts, callback) {
       'Accept-Encoding': 'gzip, deflate',
       Referer: 'https://robinhood.com/',
       Origin: 'https://robinhood.com',
-      'Access-Control-Allow-Methods': POST,
+      'Access-Control-Allow-Methods': 'POST',
       'Access-Control-Allow-Headers': 'Content-Type',
-      'Access-Control-Max-Age': 86400,
       'Access-Control-Allow-Origin': 'http://localhost:3000'
     };
     _setHeaders();
