@@ -93,7 +93,6 @@ function RobinhoodWebApi(opts, callback) {
     _private.auth_token = _.has(_options, 'token') ? _options.token : null;
     _private.headers = {
       Host: 'api.robinhood.com',
-      Accept: '*/*',
       'Accept-Encoding': 'gzip, deflate',
       Referer: 'https://robinhood.com/',
       Origin: 'https://robinhood.com',
