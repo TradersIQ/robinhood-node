@@ -1615,6 +1615,14 @@ core-util-is@~1.0.0:
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
   integrity sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
 
+cors-anywhere@^0.4.4:
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/cors-anywhere/-/cors-anywhere-0.4.4.tgz#98892fcab55f408fff13a63e125135c18dc22ca8"
+  integrity sha512-8OBFwnzMgR4mNrAeAyOLB2EruS2z7u02of2bOu7i9kKYlZG+niS7CTHLPgEXKWW2NAOJWRry9RRCaL9lJRjNqg==
+  dependencies:
+    http-proxy "1.11.1"
+    proxy-from-env "0.0.1"
+
 coveralls@^2.11.15:
   version "2.11.15"
   resolved "https://registry.yarnpkg.com/coveralls/-/coveralls-2.11.15.tgz#37d3474369d66c14f33fa73a9d25cee6e099fca0"
@@ -1845,6 +1853,11 @@ esutils@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/esutils/-/esutils-2.0.2.tgz#0abf4f1caa5bcb1f7a9d8acc6dea4faaa04bac9b"
   integrity sha1-Cr9PHKpbyx96nYrMbepPqqBLrJs=
+
+eventemitter3@1.x.x:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-1.2.0.tgz#1c86991d816ad1e504750e73874224ecf3bec508"
+  integrity sha1-HIaZHYFq0eUEdQ5zh0Ik7PO+xQg=
 
 exit-hook@^1.0.0:
   version "1.1.1"
@@ -2364,6 +2377,14 @@ hosted-git-info@^2.1.4:
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.1.5.tgz#0ba81d90da2e25ab34a332e6ec77936e1598118b"
   integrity sha1-C6gdkNouJas0ozLm7HeTbhWYEYs=
+
+http-proxy@1.11.1:
+  version "1.11.1"
+  resolved "https://registry.yarnpkg.com/http-proxy/-/http-proxy-1.11.1.tgz#71df55757e802d58ea810df2244019dda05ae85d"
+  integrity sha1-cd9VdX6ALVjqgQ3yJEAZ3aBa6F0=
+  dependencies:
+    eventemitter3 "1.x.x"
+    requires-port "0.x.x"
 
 http-signature@~1.1.0:
   version "1.1.1"
@@ -3664,6 +3685,11 @@ promise@^8.0.3:
   dependencies:
     asap "~2.0.6"
 
+proxy-from-env@0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/proxy-from-env/-/proxy-from-env-0.0.1.tgz#b27c4946e9e6d5dbadb7598a6435d3014c4cfd49"
+  integrity sha1-snxJRunm1dutt1mKZDXTAUxM/Uk=
+
 pseudomap@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/pseudomap/-/pseudomap-1.0.2.tgz#f052a28da70e618917ef0a8ac34c1ae5a68286b3"
@@ -4022,6 +4048,11 @@ require-precompiled@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/require-precompiled/-/require-precompiled-0.1.0.tgz#5a1b52eb70ebed43eb982e974c85ab59571e56fa"
   integrity sha1-WhtS63Dr7UPrmC6XTIWrWVceVvo=
+
+requires-port@0.x.x:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-0.0.1.tgz#4b4414411d9df7c855995dd899a8c78a2951c16d"
+  integrity sha1-S0QUQR2d98hVmV3YmajHiilRwW0=
 
 resolve-cwd@^1.0.0:
   version "1.0.0"
@@ -4669,6 +4700,11 @@ uuid@^3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
   integrity sha512-yXJmeNaw3DnnKAOKJE51sL/ZaYfWJRl1pK9dr19YFCu0ObS231AB1/LbqTKRAQ5kw8A90rA6fr4riOUpTZvQZA==
+
+uuid@^8.3.1:
+  version "8.3.2"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
+  integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
 
 validate-npm-package-license@^3.0.1:
   version "3.0.1"
