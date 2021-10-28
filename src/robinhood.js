@@ -15,6 +15,12 @@ var _ = require('lodash');
 var queryString = require('query-string');
 var { v4: uuidv4 } = require('uuid');
 
+// Listen on a specific host via the HOST environment variable
+var host = process.env.HOST || '0.0.0.0';
+
+// Listen on a specific port via the PORT environment variable
+var port = process.env.PORT || 8080;
+
 cors_proxy.createServer({
   originWhitelist: [], // Allow all origins
   // requireHeader: ['origin', 'x-requested-with'],
@@ -33,12 +39,6 @@ function RobinhoodWebApi(opts, callback) {
   var _currencyPairsUrl = 'https://nummus.robinhood.com/currency_pairs/';
 
   var _options = opts || {},
-
-  // Listen on a specific host via the HOST environment variable
-  var host = process.env.HOST || '0.0.0.0';
-
-  // Listen on a specific port via the PORT environment variable
-  var port = process.env.PORT || 8080;
 
     // Private API Endpoints
     _endpoints = {
