@@ -9,7 +9,7 @@
 
 // Dependencies
 var request = require('request');
-var cors_proxy = require('cors-anywhere');
+var cors_proxy = require('cors-anywhere/lib/cors-anywhere');
 var Promise = require('promise');
 var _ = require('lodash');
 var queryString = require('query-string');
