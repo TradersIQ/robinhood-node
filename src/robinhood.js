@@ -15,15 +15,30 @@ var _ = require('lodash');
 var queryString = require('query-string');
 var { v4: uuidv4 } = require('uuid');
 
+cors_proxy.createServer({
+  originWhitelist: [], // Allow all origins
+  // requireHeader: ['origin', 'x-requested-with'],
+  // removeHeaders: ['cookie', 'cookie2']
+}).listen(port, host, function() {
+  console.log('Running CORS Anywhere on ' + host + ':' + port);
+});
+
 function RobinhoodWebApi(opts, callback) {
   /* +--------------------------------+ *
    * |      Internal variables        | *
    * +--------------------------------+ */
-  var _apiUrl = 'https://api.robinhood.com/';
+  var _urlPrefix = "http://localhost:8080/"
+  var _apiUrl = _urlPrefix + 'https://api.robinhood.com/';
 
   var _currencyPairsUrl = 'https://nummus.robinhood.com/currency_pairs/';
 
   var _options = opts || {},
+
+  // Listen on a specific host via the HOST environment variable
+  var host = process.env.HOST || '0.0.0.0';
+
+  // Listen on a specific port via the PORT environment variable
+  var port = process.env.PORT || 8080;
 
     // Private API Endpoints
     _endpoints = {
@@ -138,40 +153,6 @@ function RobinhoodWebApi(opts, callback) {
   }
 
   function _login(callback) {
-
-    (function() {
-      var cors_api_host = _apiUrl + _endpoints.login;
-      var cors_api_url = cors_api_host;
-      var slice = [].slice;
-      var origin = window.location.protocol + '//' + window.location.host;
-      var open = XMLHttpRequest.prototype.open;
-      XMLHttpRequest.prototype.open = function() {
-          var args = slice.call(arguments);
-          var targetOrigin = /^https?:\/\/([^\/]+)/i.exec(args[1]);
-          if (targetOrigin && targetOrigin[0].toLowerCase() !== origin &&
-              targetOrigin[1] !== cors_api_host) {
-              args[1] = cors_api_url + args[1];
-          }
-          return open.apply(this, args);
-      };
-    })();
-    (function() {
-      var cors_api_host = _apiUrl + _endpoints.accounts;
-      var cors_api_url = cors_api_host;
-      var slice = [].slice;
-      var origin = window.location.protocol + '//' + window.location.host;
-      var open = XMLHttpRequest.prototype.open;
-      XMLHttpRequest.prototype.open = function() {
-          var args = slice.call(arguments);
-          var targetOrigin = /^https?:\/\/([^\/]+)/i.exec(args[1]);
-          if (targetOrigin && targetOrigin[0].toLowerCase() !== origin &&
-              targetOrigin[1] !== cors_api_host) {
-              args[1] = cors_api_url + args[1];
-          }
-          return open.apply(this, args);
-      };
-    })();
-
     var form = {
       grant_type: 'password',
       scope: 'internal',
