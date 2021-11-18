@@ -6,40 +6,25 @@
  */
 
 'use strict';
- 
+
 // Dependencies
 var request = require('request');
-var cors_proxy = require('cors-anywhere/lib/cors-anywhere');
 var Promise = require('promise');
 var _ = require('lodash');
 var queryString = require('query-string');
 var { v4: uuidv4 } = require('uuid');
 
-// Listen on a specific host via the HOST environment variable
-var host = process.env.HOST || '0.0.0.0';
-
-// Listen on a specific port via the PORT environment variable
-var port = process.env.PORT || 8080;
-
-cors_proxy.createServer({
-  originWhitelist: [], // Allow all origins
-  // requireHeader: ['origin', 'x-requested-with'],
-  // removeHeaders: ['cookie', 'cookie2']
-}).listen(port, host, function() {
-  console.log('Running CORS Anywhere on ' + host + ':' + port);
-});
-
 function RobinhoodWebApi(opts, callback) {
   /* +--------------------------------+ *
    * |      Internal variables        | *
    * +--------------------------------+ */
-  var _urlPrefix = "https://tranquil-reaches-51121.herokuapp.com/"
-  var _apiUrl = _urlPrefix + 'https://api.robinhood.com/';
+  var proxyURL = 'https://tranquil-reaches-51121.herokuapp.com/';
+
+  var _apiUrl = proxyURL + 'https://api.robinhood.com/';
 
   var _currencyPairsUrl = 'https://nummus.robinhood.com/currency_pairs/';
 
   var _options = opts || {},
-
     // Private API Endpoints
     _endpoints = {
       login: 'oauth2/token/',
@@ -110,9 +95,10 @@ function RobinhoodWebApi(opts, callback) {
     _private.auth_token = _.has(_options, 'token') ? _options.token : null;
     _private.headers = {
       Host: 'api.robinhood.com',
+      Accept: '*/*',
       'Accept-Encoding': 'gzip, deflate',
       Referer: 'https://robinhood.com/',
-      Origin: 'https://robinhood.com',
+      Origin: 'https://robinhood.com'
     };
     _setHeaders();
     if (!_private.auth_token) {
