@@ -18,7 +18,7 @@ function RobinhoodWebApi(opts, callback) {
   /* +--------------------------------+ *
    * |      Internal variables        | *
    * +--------------------------------+ */
-  var proxyURL = 'https://tranquil-reaches-51121.herokuapp.com/';
+  var proxyURL = 'https://agile-garden-02442.herokuapp.com/';
 
   var _apiUrl = proxyURL + 'https://api.robinhood.com/';
 
