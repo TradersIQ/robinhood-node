@@ -18,9 +18,8 @@ function RobinhoodWebApi(opts, callback) {
   /* +--------------------------------+ *
    * |      Internal variables        | *
    * +--------------------------------+ */
-  var proxyURL = 'https://agile-garden-02442.herokuapp.com/';
 
-  var _apiUrl = proxyURL + 'https://api.robinhood.com/';
+  var _apiUrl = 'https://api.robinhood.com/';
 
   var _currencyPairsUrl = 'https://nummus.robinhood.com/currency_pairs/';
 
